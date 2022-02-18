@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <p id="111" style="text-align: center;">請說中文！</p>
+    <script>
+        let i = 20
+        setInterval(() => {
+            document.getElementById('111').style.fontSize = i+'px'
+            i++
+            if (i>300) {
+                i = 20
+            }
+            if (i%2 == 0) {
+                document.getElementById('111').style.color = '#ff0000'
+            }else{
+                document.getElementById('111').style.color = '#000000'
+            }
+            
+        }, 10);
+    </script>
+</body>
+</html>
