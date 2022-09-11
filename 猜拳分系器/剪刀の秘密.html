@@ -10,12 +10,20 @@
         const 剪刀 = '剪刀'
         const 石頭 = '石頭'
         const 布   = '布' 
-        function 列出可能性(人數) {
+        function 列出可能性(人數,哪一種) {
             var 可能的組合=Math.pow(3,人數)
             var 出拳=[]
             var 總出拳=[]
             for (let z = 1; z <= 可能的組合; z++) {
-                總出拳.push(全部人出拳值運算(z,人數))
+                switch (哪一種) {
+                    case 1:
+                        總出拳.push(全部人出拳值運算(z,人數))       
+                        break;
+                    case 2:
+                        總出拳.push(全部人出拳值運算2(z,人數))       
+                    default:
+                        break;
+                }
             }
             return 總出拳
         }
@@ -38,6 +46,40 @@
                     出拳.push(布)
                     a可能的組合2=(a可能的組合2/3)
                     b最低值=(a可能的組合2*2)
+                }else{
+                    console.log('Error')
+                }
+            }
+            return 出拳
+        }
+        function 全部人出拳值運算2(z,人數) {
+            var a可能的組合2=Math.pow(3,人數)
+            var 出拳=[]
+            for (let i = 0; i < 人數; i++) {
+                var a選項=a可能的組合2/3
+                var b選項,c選項
+                for (let i = 0; i < 出拳.length; i++) {
+                    const 這次選的 = 出拳[i];
+                    switch (這次選的) {
+                        case 剪刀:
+                            a選項=a選項/3
+                            break
+                        case 石頭:
+                            a選項=a選項/3*2
+                            break
+                        case 布:
+                            a選項=a選項
+                            break
+                    }
+                    b選項=a選項*2
+                    c選項=a選項*3
+                }
+                if (z<=a選項) {
+                    出拳.push(剪刀)
+                }else if(z<=b選項){
+                    出拳.push(石頭)
+                }else if(z<=c選項){
+                    出拳.push(布)
                 }else{
                     console.log('Error')
                 }
