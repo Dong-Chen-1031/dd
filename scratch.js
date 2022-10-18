@@ -10,11 +10,9 @@
 // ==/UserScript==
 
 (function() {
-    function addScript(url){
-        document.write("<script language=javascript src="+url+"></script>");
-    }
-    addScript('https://www.gstatic.com/firebasejs/4.12.1/firebase.js')
-    addScript('https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js')
-    var namespan=document.getElementsByClassName('account-nav_profile-name_2oRiV')
-    console.log(namespan.innerText)
+    setTimeout(() => {
+        
+        var namespan=document.getElementsByClassName('profile-name')
+        console.log(namespan[0].innerText)
+    }, 5000);
 })();
