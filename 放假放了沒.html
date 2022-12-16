@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title">了沒</title>
+    <style>
+        html{font-family: 微軟正黑體;}
+        .body{text-align: center;}
+        .Detailed_time{display: inline-block;font-size: 30px;}
+        .Detailed_time>p{display: inline-block;}
+        .title{font-size: 50px;}
+    </style>
+</head>
+<body class="body">
+    <p id="title_1" class="title">還要：<span id="date_days">xx</span>天 才會<span id="do">...</span></p>
+    <div class="Detailed_time"><p id="date_hours">xx</p>小時 <p id="date_mins">xx</p>分鐘 <p id="date_secs">xx</p>秒 <p id="date_micorsecs">xx</p>豪秒</div>
+    <script>
+        var name_what_going_on = '寒假'
+        var data_going_on = new Date('2023/1/20 3:55:00')
+        setInterval(() => {
+            let timeInMs = Date.now();
+            let time_VS = new Date(data_going_on-timeInMs);
+            console.log(time_VS)
+            document.getElementById('date_days').innerText=time_VS/60/60/24
+            document.getElementById('date_hours').innerText=time_VS.getHours()
+            document.getElementById('date_mins').innerText=time_VS.getMinutes()
+            document.getElementById('date_secs').innerText=time_VS.getSeconds()
+            document.getElementById('date_micorsecs').innerText=time_VS.getMilliseconds()
+        }, 100);
+    </script>
+</body>
+</html>
