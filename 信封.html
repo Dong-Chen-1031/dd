@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <script src="http://s0.ifengimg.com/static/js/jquery-1.7.2.min_c4de8813.js"></script>
+    <title>留声卡</title>
+    <script>
+        document.documentElement.style.fontSize=document.documentElement.clientWidth/7.5+'px';
+        $(function(){
+            $('.lock-btn').on('click',function(){
+                $('.shell-li').addClass('open');
+                $('.li-hand').addClass('li-hand-show');
+                $(this).fadeOut(500);
+        });
+        })
+    </script>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            list-style: none;
+        }
+        html {
+            height: 100%;
+        }
+        body {
+            min-height: 100%;
+            background-color: #54586c;
+            margin: 0 auto;
+        }
+ 
+        .icons {
+            display: inline-block;
+            /* background-image: url(http://s0.ifengimg.com/2017/05/26/card3_icons-93dc5a1c12_8cceaf27.png); */
+            background-color: #303340;
+            background-repeat: no-repeat;
+            background-size: 2.6rem 2.1rem;
+        }
+        .relative {
+            position: relative;
+        }
+        .arrow {
+            width: .13rem;
+            height: 0.07rem;
+            margin-top: 0.07rem;
+            vertical-align: top;
+            background-position: -1.62rem -1.58rem;
+        }
+        .li-hand {
+            position: absolute;
+            width: .44rem;
+            height: .22rem;
+            bottom: 0.03rem;
+            left: 0;
+            right: 0;
+            margin: auto;
+            -webkit-border-radius: 0 0 0.225rem 0.225rem;
+            border-radius: 0 0 0.225rem 0.225rem;
+            line-height: .22rem;
+            font-size: 0.15rem;
+            color: #fff;
+            text-align: center;
+            background-color: #3e6b94;
+            -webkit-transition: all 0.7s;
+            transition: all 0.7s;
+        }
+        .li-hand-show {
+            -webkit-transform: translateY(.22rem);
+            transform: translateY(.22rem);
+        }
+        .cd-li {
+            /* background-image: url(http://s0.ifengimg.com/2017/05/26/card3_cd-43c5fdcb7f_7f6fb734.jpg); */
+            background-color: #3e6b94;
+            background-size: 100% 100%;
+            background-position: 0 0;
+            -webkit-transform: translate3d(0,0,1px);
+            transform: translate3d(0,0,1px);
+            width: 2.5rem;
+            height: 2.5rem;
+        }
+        #list > .shell-li {
+            background-color: transparent;
+        }
+        #list {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            width: 2.5rem;
+            margin-top: 200px;
+            margin-left: 30px;
+            font-size: .11rem;
+            color: #303340;
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            -webkit-perspective: 13.5rem;
+            perspective: 13.5rem;
+            -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+            -webkit-animation-delay: 1s;
+            animation-delay: 1s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+            -webkit-animation: list-show linear 2s;
+            animation: list-show linear 2s;
+        }
+        @-webkit-keyframes list-show {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes list-show {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .shell-li {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            -webkit-transform-origin: 100% 0;
+            transform-origin: 100% 0;
+            -webkit-transform: translate3d(0,0,2px);
+            transform: translate3d(0,0,2px);
+            z-index: 2;
+        }
+        .open {
+            -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+            -webkit-animation: openli linear 1.5s;
+            animation: openli linear 1.5s;
+            -webkit-transform: rotateX(200deg) translate3d(0,0,2px);
+            transform: rotateX(200deg) translate3d(0,0,2px);
+        }
+        @-webkit-keyframes openli {
+            0% {
+                -webkit-transform: rotateX(0) translate3d(0,0,2px);
+                transform: rotateX(0) translate3d(0,0,2px);
+            }
+            33.333% {
+                -webkit-transform: rotateX(60deg) translate3d(0,0,2px);
+                transform: rotateX(60deg) translate3d(0,0,2px);
+            }
+            50% {
+                -webkit-transform: rotateX(100deg) translate3d(0,0,2px);
+                transform: rotateX(100deg) translate3d(0,0,2px);
+            }
+            66.666% {
+                -webkit-transform: rotateX(100deg) translate3d(0,0,2px);
+                transform: rotateX(100deg) translate3d(0,0,2px);
+            }
+            100% {
+                -webkit-transform: rotateX(100deg) translate3d(0,0,2px);
+                transform: rotateX(100deg) translate3d(0,0,2px);
+            }
+        }
+        @keyframes openli {
+            0% {
+                -webkit-transform: rotateX(0) translate3d(0,0,2px);
+                transform: rotateX(0) translate3d(0,0,2px);
+            }
+            33.333% {
+                -webkit-transform: rotateX(60deg) translate3d(0,0,2px);
+                transform: rotateX(60deg) translate3d(0,0,2px);
+            }
+            50% {
+                -webkit-transform: rotateX(100deg) translate3d(0,0,2px);
+                transform: rotateX(100deg) translate3d(0,0,2px);
+            }
+            66.666% {
+                -webkit-transform: rotateX(140deg) translate3d(0,0,2px);
+                transform: rotateX(140deg) translate3d(0,0,2px);
+            }
+            100% {
+                -webkit-transform: rotateX(200deg) translate3d(0,0,2px);
+                transform: rotateX(200deg) translate3d(0,0,2px);
+            }
+        }
+        .cd-shell {
+            display: block;
+            width: 2.5rem;
+            height: 1.3rem;
+            margin: -0.15rem auto 0;
+            background-position: 0 0;
+            z-index: 2;
+        }
+        .lock-btn {
+            position: absolute;
+            bottom: -.33rem;
+            left: 0;
+            right: 0;
+            display: block;
+            width: .66rem;
+            height: .66rem;
+            margin: 0 auto;
+            background-position: 0 -1.35rem;
+            transition: all 0.7s;
+            -webkit-transition: all 0.7s;
+            z-index: 3;
+        }
+    </style>
+</head>
+<body>
+<ul id="list" class="relative">
+    <li class="shell-li">
+        <div class="li-hand"><span class="icons arrow"></span></div>
+        <span class="icons cd-shell relative"></span>
+        <span class="icons lock-btn"></span>
+    </li>
+    <li class="relative cd-li">
+    </li>
+</ul>
+</body>
+</html>

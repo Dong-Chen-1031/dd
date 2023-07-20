@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To 小魚</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Noto+Sans+TC&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+  <style>
+    .content{background-color: plum;color: azure;width: 70%;height:100% ;margin-left: auto;margin-right: auto;margin-top: 5%;margin-bottom: auto;border-radius: 10%;}
+    body{background-color: bisque;width: 100%;height: 100%;}
+    .fade-in-line {
+      opacity: 0;
+      transition: opacity 1s;
+    }
+    p{text-align: center;margin-left: auto;margin-right: auto;font-size: 30px;font-family: 'DotGothic16', sans-serif;}
+  </style>
+  <div id="content" class="content">
+    <!-- <p class="fade-in-line">　</p> -->
+    <p class="fade-in-line">Hello,小魚，最近還好嗎？</p>
+    <p class="fade-in-line">我覺得升上國中很棒，國中很好玩，而且作業比國小還要少</p>
+    <p class="fade-in-line">另外bobo前不久去參加桌球比賽，一下子就輸掉了</p>
+    <p class="fade-in-line">再過<span id="countdown"></span></p>
+    <p class="fade-in-line">我們就又能見面了</p>
+    <p class="fade-in-line">期待著夏日炎炎的暑假</p>
+    <p class="fade-in-line">也期盼著與你們一同創造難忘的回憶，享受一起相聚的時光！😊</p>
+    <p class="fade-in-line">　　　　　　　　　　　　　　　　　　　　　　　　東東 上</p>
+  </div>
+
+<script>
+// 設定目標日期和時間
+var targetDate = new Date("2023-06-30T00:00:00Z").getTime();
+
+// 更新計時器的剩餘時間
+function updateCountdown() {
+    // 取得現在的日期和時間
+    var currentDate = new Date().getTime();
+
+    // 計算剩餘的毫秒數
+    var remainingTime = targetDate - currentDate;
+
+    // 計算剩餘的天數、小時、分鐘和秒數
+    var days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
+
+    // 將剩餘的時間顯示在 HTML 元素上
+    document.getElementById("countdown").innerHTML = days + " 天 " + hours + " 小時 "
+    + minutes + " 分鐘 " + seconds + " 秒";
+
+    // 每秒更新一次計時器
+    setTimeout(updateCountdown, 1000);
+}
+
+
+updateCountdown();
+</script>
+
+
+  <script>
+    const lines = document.querySelectorAll('.fade-in-line');
+
+    function fadeInLines() {
+      for (let i = 0; i < lines.length; i++) {
+        setTimeout(function() {
+          lines[i].style.opacity = 1;
+        }, i * 2000);
+      }
+    }
+
+    fadeInLines();
+  </script>
+</body>
+</html>
+
+</body>
+</html>

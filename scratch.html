@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+        myHeaders.append("Cookie", "ASPSESSIONIDCSTQBSSS=PCEKEKFCJKLPKDINONCLDLGA");
+
+        var urlencoded = new URLSearchParams();
+        urlencoded.append("stud_no", "155003");
+        urlencoded.append("password", "FF849117");
+
+        var requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: urlencoded,
+            mode: 'no-cors' // 设置mode为'no-cors'
+        };
+
+        fetch("http://163.20.9.3/qstudent/login.asp", requestOptions)
+            .then(response => {
+                console.log(response)
+            })
+            .catch(error => console.log('Error:', error));
+
+    </script>
+</body>
+</html>
